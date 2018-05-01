@@ -4,7 +4,7 @@ FROM ubuntu:14.04
 # ubuntu env
 RUN dpkg --add-architecture i386 && apt-get update \
     && apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0 aria2 \
-# aosp compile env 
+# aosp compile env
     && aria2c -x4 http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u45-b14-1_amd64.deb \
     && aria2c -x4 http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre_8u45-b14-1_amd64.deb \
     && aria2c -x4 http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u45-b14-1_amd64.deb \
@@ -20,7 +20,7 @@ COPY entrypoint.sh /usr/bin/
 
 # Add a user and group - buildserver:buildserver
 RUN useradd buildserver -m -U \
-    && mkdir -p /data 
+    && mkdir -p /data
 
 USER buildserver
 RUN mkdir -p ${HOME}/bin \

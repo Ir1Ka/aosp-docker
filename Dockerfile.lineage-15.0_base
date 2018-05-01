@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 
 # ubuntu env
 RUN dpkg --add-architecture i386 && apt-get update \
-# aosp compile env 
+# aosp compile env
     && apt -y install bc bison build-essential curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick \
         lib32ncurses5-dev lib32readline-dev lib32z1-dev libesd0-dev liblz4-tool libncurses5-dev libsdl1.2-dev \
         libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc \
@@ -16,7 +16,7 @@ COPY entrypoint.sh /usr/bin/
 
 # Add a user and group - buildserver:buildserver
 RUN useradd buildserver -m -U \
-    && mkdir -p /data 
+    && mkdir -p /data
 
 USER buildserver
 RUN mkdir -p ${HOME}/bin \
