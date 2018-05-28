@@ -3,13 +3,10 @@ FROM irika/aosp:8.0-base
 
 USER root
 
-COPY bash_completion-etc /etc/bash_completion
-COPY bash_completion-usr /usr/share/bash-completion/bash_completion
-
 # remove the old vim, and then compile and install vim 8.0
 COPY vim /tmp/vim
 RUN apt-get update && apt-get purge vim vim-runtime gvim -y \
-    && apt-get install python-dev python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git make cscope ctags cmake -y \
+    && apt-get install python-dev python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git make cscope ctags cmake bash-completion -y \
 # if you are not clone vim
 #   && git clone https://github.com/vim/vim.git /tmp/vim \
     && cd /tmp/vim && make distclean \
