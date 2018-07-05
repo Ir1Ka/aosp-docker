@@ -10,4 +10,9 @@ else
     echo "GIT_NAME or GIT_EMAIL do not set."
 fi
 
+# Exec the init script if it exist.
+if [ -x "/data/$INIT_SCRIPT" ]; then
+    /data/$INIT_SCRIPT
+fi
+
 exec "$@"
