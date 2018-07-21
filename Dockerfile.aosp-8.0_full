@@ -3,12 +3,10 @@ FROM irika/aosp:8.0-base
 
 USER root
 
-# remove the old vim, and then compile and install vim 8.0
-COPY vim /tmp/vim
+# remove the old vim, and then compile and install vim 8.0 and other tools
+COPY data/vim/vim /tmp/vim
 RUN apt-get update && apt-get purge vim vim-runtime gvim -y \
     && apt-get install python-dev python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git make cscope ctags cmake bash-completion -y \
-# if you are not clone vim
-#   && git clone https://github.com/vim/vim.git /tmp/vim \
     && cd /tmp/vim && make distclean \
     && ./configure --with-features=huge \
     --enable-multibyte \
@@ -28,8 +26,8 @@ RUN apt-get update && apt-get purge vim vim-runtime gvim -y \
 
 USER ${USER}
 
-COPY .vim /tmp/.vim
-COPY .vimrc /tmp/
+COPY data/vim/.vim /tmp/.vim
+COPY data/vim/.vimrc /tmp/
 
 # build YouCompleteMe
 RUN cp -rf /tmp/.vim* ${HOME}/ \

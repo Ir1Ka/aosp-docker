@@ -1,0 +1,87 @@
+[submodule "data/vim/vim"]
+	path = data/vim/vim
+	url = https://github.com/vim/vim.git
+[submodule "data/vim/.vim/bundle/BOOKMARKS--Mark-and-Highlight-Full-Lines"]
+	path = data/vim/.vim/bundle/BOOKMARKS--Mark-and-Highlight-Full-Lines
+	url = https://github.com/vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines.git
+[submodule "data/vim/.vim/bundle/ctrlsf.vim"]
+	path = data/vim/.vim/bundle/ctrlsf.vim
+	url = https://github.com/dyng/ctrlsf.vim.git
+[submodule "data/vim/.vim/bundle/DfrankUtil"]
+	path = data/vim/.vim/bundle/DfrankUtil
+	url = https://github.com/vim-scripts/DfrankUtil.git
+[submodule "data/vim/.vim/bundle/DrawIt"]
+	path = data/vim/.vim/bundle/DrawIt
+	url = https://github.com/vim-scripts/DrawIt.git
+[submodule "data/vim/.vim/bundle/fcitx.vim"]
+	path = data/vim/.vim/bundle/fcitx.vim
+	url = https://github.com/lilydjwg/fcitx.vim.git
+[submodule "data/vim/.vim/bundle/gundo.vim"]
+	path = data/vim/.vim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "data/vim/.vim/bundle/indexer.tar.gz"]
+	path = data/vim/.vim/bundle/indexer.tar.gz
+	url = https://github.com/vim-scripts/indexer.tar.gz.git
+[submodule "data/vim/.vim/bundle/minibufexpl.vim"]
+	path = data/vim/.vim/bundle/minibufexpl.vim
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "data/vim/.vim/bundle/molokai"]
+	path = data/vim/.vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "data/vim/.vim/bundle/nerdcommenter"]
+	path = data/vim/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "data/vim/.vim/bundle/nerdtree"]
+	path = data/vim/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "data/vim/.vim/bundle/phd"]
+	path = data/vim/.vim/bundle/phd
+	url = https://github.com/vim-scripts/phd.git
+[submodule "data/vim/.vim/bundle/tagbar"]
+	path = data/vim/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "data/vim/.vim/bundle/ultisnips"]
+	path = data/vim/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "data/vim/.vim/bundle/vim-colors-solarized"]
+	path = data/vim/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "data/vim/.vim/bundle/vim-cpp-enhanced-highlight"]
+	path = data/vim/.vim/bundle/vim-cpp-enhanced-highlight
+	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "data/vim/.vim/bundle/vim-easymotion"]
+	path = data/vim/.vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "data/vim/.vim/bundle/vim-fswitch"]
+	path = data/vim/.vim/bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule "data/vim/.vim/bundle/vim-indent-guides"]
+	path = data/vim/.vim/bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "data/vim/.vim/bundle/vim-instant-markdown"]
+	path = data/vim/.vim/bundle/vim-instant-markdown
+	url = https://github.com/suan/vim-instant-markdown.git
+[submodule "data/vim/.vim/bundle/vim-multiple-cursors"]
+	path = data/vim/.vim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "data/vim/.vim/bundle/vim-powerline"]
+	path = data/vim/.vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "data/vim/.vim/bundle/vimprj"]
+	path = data/vim/.vim/bundle/vimprj
+	url = https://github.com/vim-scripts/vimprj.git
+[submodule "data/vim/.vim/bundle/vim-protodef"]
+	path = data/vim/.vim/bundle/vim-protodef
+	url = https://github.com/derekwyatt/vim-protodef.git
+[submodule "data/vim/.vim/bundle/vim-signature"]
+	path = data/vim/.vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule "data/vim/.vim/bundle/Vundle.vim"]
+	path = data/vim/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "data/vim/.vim/bundle/wildfire.vim"]
+	path = data/vim/.vim/bundle/wildfire.vim
+	url = https://github.com/gcmt/wildfire.vim.git
+[submodule "data/vim/.vim/bundle/YouCompleteMe"]
+	path = data/vim/.vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

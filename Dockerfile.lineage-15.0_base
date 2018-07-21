@@ -12,20 +12,18 @@ RUN dpkg --add-architecture i386 && apt-get update \
     && apt-get purge -y --auto-remove \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+COPY data/repo/repo /usr/bin/
+RUN chmod +x /usr/bin/repo
+
+WORKDIR /data
+
 COPY entrypoint.sh /usr/bin/
 
-# Add a user and group - buildserver:buildserver
-RUN useradd buildserver -m -U \
-    && mkdir -p /data
+# Create a user and group - builder:builder
+ENV USER builder
+RUN useradd ${USER} -m -U
 
-USER buildserver
-RUN mkdir -p ${HOME}/bin \
-    && curl https://storage.googleapis.com/git-repo-downloads/repo > ${HOME}/bin/repo \
-    && chmod +x ${HOME}/bin/repo \
-    && git config --global core.editor vim
-
-VOLUME /data
-WORKDIR /data
+USER ${USER}
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["bash", "--login"]

@@ -3,35 +3,33 @@ FROM ubuntu:14.04
 
 # ubuntu env
 RUN dpkg --add-architecture i386 && apt-get update \
-    && apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0 aria2 \
+    && apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0 \
 # aosp compile env
-    && aria2c -x4 http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u45-b14-1_amd64.deb \
-    && aria2c -x4 http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jre_8u45-b14-1_amd64.deb \
-    && aria2c -x4 http://old-releases.ubuntu.com/ubuntu/pool/universe/o/openjdk-8/openjdk-8-jdk_8u45-b14-1_amd64.deb \
-    && dpkg -i *.deb || apt-get -f -y install && rm -rf *.deb \
     && apt-get -y install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib \
         g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
-        libgl1-mesa-dev libxml2-utils xsltproc unzip python vim bc genisoimage realpath \
+        libgl1-mesa-dev libxml2-utils xsltproc unzip python python3 bc genisoimage realpath \
 # clean apt and tmp file
     && apt-get purge -y --auto-remove \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+COPY data/openjdk-8 /tmp/openjdk-8
+RUN dpkg -i /tmp/openjdk-8/*.deb || apt-get -f -y install \
+# clean apt and tmp file
+    && apt-get purge -y --auto-remove \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY data/repo/repo /usr/bin/
+RUN chmod +x /usr/bin/repo
+
+WORKDIR /data
+
 COPY entrypoint.sh /usr/bin/
 
-ENV USER buildserver
-
-# Add a user and group - buildserver:buildserver
-RUN useradd ${USER} -m -U \
-    && mkdir -p /data
+# Create a user and group - builder:builder
+ENV USER builder
+RUN useradd ${USER} -m -U
 
 USER ${USER}
-RUN mkdir -p ${HOME}/bin \
-    && curl https://storage.googleapis.com/git-repo-downloads/repo > ${HOME}/bin/repo \
-    && chmod +x ${HOME}/bin/repo \
-    && git config --global core.editor vim
-
-VOLUME /data
-WORKDIR /data
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["bash", "--login"]
