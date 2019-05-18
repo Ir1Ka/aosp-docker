@@ -13,9 +13,6 @@
 [submodule "data/vim/.vim/bundle/DrawIt"]
 	path = data/vim/.vim/bundle/DrawIt
 	url = https://github.com/vim-scripts/DrawIt.git
-[submodule "data/vim/.vim/bundle/fcitx.vim"]
-	path = data/vim/.vim/bundle/fcitx.vim
-	url = https://github.com/lilydjwg/fcitx.vim.git
 [submodule "data/vim/.vim/bundle/gundo.vim"]
 	path = data/vim/.vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
